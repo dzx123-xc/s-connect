@@ -12,6 +12,7 @@ from app.services.auth_service import (
 )
 from app.schemas.auth import RegisterRequest, LoginRequest, AuthResponse
 from app.auth.dependencies import require_role
+from app.config import settings
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -30,12 +31,12 @@ def register(data: RegisterRequest, response: Response, db: DBSession = Depends(
     session_id = create_session(db, user.id)
 
     response.set_cookie(
-        key="session_id",
+        key=settings.session_cookie_name,
         value=session_id,
         httponly=True,
-        secure=False,
-        samesite="lax",
-        max_age=30 * 24 * 60 * 60,
+        secure=settings.session_cookie_secure,
+        samesite=settings.session_cookie_samesite,
+        max_age=settings.session_max_age_seconds,
         path="/",
     )
 
@@ -95,7 +96,7 @@ def logout(request: Request, response: Response, db: DBSession = Depends(get_db)
     if session_id:
         revoke_session(db, session_id)
 
-    response.delete_cookie(key="session_id", path="/", httponly=True, secure=False, samesite="lax")
+    response.delete_cookie(key=settings.session_cookie_name, path="/", httponly=settings.session_cookie_httponly, secure=settings.session_cookie_secure, samesite=settings.session_cookie_samesite)
     return {"message": "Logged out"}
 
 
