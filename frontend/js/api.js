@@ -4,7 +4,8 @@
  * No JWT, no localStorage auth, no URL user_id. No fake responses.
  */
 
-const API_BASE = '/api';
+// The FastAPI routers are mounted at /auth and /health (no /api prefix).
+const API_BASE = '';
 
 class ApiError extends Error {
   constructor(message, status, data = null) {
