@@ -1,0 +1,456 @@
+{
+  "state": {
+    "code": "KL",
+    "name": "Kerala"
+  },
+  "districts": [
+    {
+      "name": "Alappuzha",
+      "cities": [
+        {
+          "name": "Alappuzha",
+          "type": "city",
+          "villages": [
+            "Alappuzha Rural",
+            "Chengannur",
+            "Kayamkulam"
+          ]
+        },
+        {
+          "name": "Chengannur",
+          "type": "town",
+          "villages": [
+            "Chengannur Rural",
+            "Mavelikkara",
+            "Aranmula"
+          ]
+        },
+        {
+          "name": "Kayamkulam",
+          "type": "town",
+          "villages": [
+            "Kayamkulam Rural",
+            "Haripad",
+            "Mavelikkara"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ernakulam",
+      "cities": [
+        {
+          "name": "Kochi",
+          "type": "city",
+          "villages": [
+            "Kochi Rural",
+            "Kumbalangi",
+            "Cheranallur"
+          ]
+        },
+        {
+          "name": "Aluva",
+          "type": "town",
+          "villages": [
+            "Aluva Rural",
+            "Kalamassery",
+            "Perumbavoor"
+          ]
+        },
+        {
+          "name": "Muvattupuzha",
+          "type": "town",
+          "villages": [
+            "Muvattupuzha Rural",
+            "Koothattukulam",
+            "Piravom"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Idukki",
+      "cities": [
+        {
+          "name": "Thodupuzha",
+          "type": "town",
+          "villages": [
+            "Thodupuzha Rural",
+            "Muvattupuzha",
+            "Karimkunnam"
+          ]
+        },
+        {
+          "name": "Munnar",
+          "type": "town",
+          "villages": [
+            "Munnar Rural",
+            "Devikulam",
+            "Peerumedu"
+          ]
+        },
+        {
+          "name": "Peerumedu",
+          "type": "town",
+          "villages": [
+            "Peerumedu Rural",
+            "Vandiperiyar",
+            "Kumily"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kannur",
+      "cities": [
+        {
+          "name": "Kannur",
+          "type": "city",
+          "villages": [
+            "Kannur Rural",
+            "Thalassery",
+            "Payyanur"
+          ]
+        },
+        {
+          "name": "Thalassery",
+          "type": "town",
+          "villages": [
+            "Thalassery Rural",
+            "Mahe",
+            "Iritty"
+          ]
+        },
+        {
+          "name": "Payyanur",
+          "type": "town",
+          "villages": [
+            "Payyanur Rural",
+            "Kanhangad",
+            "Cheruthazham"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kasaragod",
+      "cities": [
+        {
+          "name": "Kasaragod",
+          "type": "town",
+          "villages": [
+            "Kasaragod Rural",
+            "Kanhangad",
+            "Nileshwar"
+          ]
+        },
+        {
+          "name": "Kanhangad",
+          "type": "town",
+          "villages": [
+            "Kanhangad Rural",
+            "Nileshwar",
+            "Bela"
+          ]
+        },
+        {
+          "name": "Nileshwar",
+          "type": "town",
+          "villages": [
+            "Nileshwar Rural",
+            "Cheruvathur",
+            "Padne"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kollam",
+      "cities": [
+        {
+          "name": "Kollam",
+          "type": "city",
+          "villages": [
+            "Kollam Rural",
+            "Punalur",
+            "Karunagappally"
+          ]
+        },
+        {
+          "name": "Punalur",
+          "type": "town",
+          "villages": [
+            "Punalur Rural",
+            "Kottarakkara",
+            "Aryankavu"
+          ]
+        },
+        {
+          "name": "Karunagappally",
+          "type": "town",
+          "villages": [
+            "Karunagappally Rural",
+            "Sasthamkotta",
+            "Ochira"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kottayam",
+      "cities": [
+        {
+          "name": "Kottayam",
+          "type": "city",
+          "villages": [
+            "Kottayam Rural",
+            "Changanassery",
+            "Pala"
+          ]
+        },
+        {
+          "name": "Changanassery",
+          "type": "town",
+          "villages": [
+            "Changanassery Rural",
+            "Thiruvalla",
+            "Kanjirappally"
+          ]
+        },
+        {
+          "name": "Pala",
+          "type": "town",
+          "villages": [
+            "Pala Rural",
+            "Ettumanoor",
+            "Uzhavoor"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kozhikode",
+      "cities": [
+        {
+          "name": "Kozhikode",
+          "type": "city",
+          "villages": [
+            "Kozhikode Rural",
+            "Vatakara",
+            "Koyilandy"
+          ]
+        },
+        {
+          "name": "Vatakara",
+          "type": "town",
+          "villages": [
+            "Vatakara Rural",
+            "Koyilandy",
+            "Nadapuram"
+          ]
+        },
+        {
+          "name": "Koyilandy",
+          "type": "town",
+          "villages": [
+            "Koyilandy Rural",
+            "Balussery",
+            "Perambra"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Malappuram",
+      "cities": [
+        {
+          "name": "Malappuram",
+          "type": "city",
+          "villages": [
+            "Malappuram Rural",
+            "Manjeri",
+            "Perinthalmanna"
+          ]
+        },
+        {
+          "name": "Manjeri",
+          "type": "city",
+          "villages": [
+            "Manjeri Rural",
+            "Nilambur",
+            "Wandoor"
+          ]
+        },
+        {
+          "name": "Perinthalmanna",
+          "type": "town",
+          "villages": [
+            "Perinthalmanna Rural",
+            "Pattambi",
+            "Mankada"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Palakkad",
+      "cities": [
+        {
+          "name": "Palakkad",
+          "type": "city",
+          "villages": [
+            "Palakkad Rural",
+            "Ottapalam",
+            "Chittur"
+          ]
+        },
+        {
+          "name": "Ottapalam",
+          "type": "town",
+          "villages": [
+            "Ottapalam Rural",
+            "Shoranur",
+            "Pattambi"
+          ]
+        },
+        {
+          "name": "Chittur",
+          "type": "town",
+          "villages": [
+            "Chittur Rural",
+            "Kollengode",
+            "Nenmara"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pathanamthitta",
+      "cities": [
+        {
+          "name": "Pathanamthitta",
+          "type": "town",
+          "villages": [
+            "Pathanamthitta Rural",
+            "Adoor",
+            "Thiruvalla"
+          ]
+        },
+        {
+          "name": "Adoor",
+          "type": "town",
+          "villages": [
+            "Adoor Rural",
+            "Kadampanad",
+            "Pandalam"
+          ]
+        },
+        {
+          "name": "Thiruvalla",
+          "type": "town",
+          "villages": [
+            "Thiruvalla Rural",
+            "Kaviyoor",
+            "Mallappally"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thiruvananthapuram",
+      "cities": [
+        {
+          "name": "Thiruvananthapuram",
+          "type": "city",
+          "villages": [
+            "Thiruvananthapuram Rural",
+            "Kazhakkoottam",
+            "Sreekaryam"
+          ]
+        },
+        {
+          "name": "Neyyattinkara",
+          "type": "town",
+          "villages": [
+            "Neyyattinkara Rural",
+            "Parassala",
+            "Kattakkada"
+          ]
+        },
+        {
+          "name": "Attingal",
+          "type": "town",
+          "villages": [
+            "Attingal Rural",
+            "Varkala",
+            "Chirayinkeezhu"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thrissur",
+      "cities": [
+        {
+          "name": "Thrissur",
+          "type": "city",
+          "villages": [
+            "Thrissur Rural",
+            "Guruvayur",
+            "Kunnamkulam"
+          ]
+        },
+        {
+          "name": "Guruvayur",
+          "type": "town",
+          "villages": [
+            "Guruvayur Rural",
+            "Chavakkad",
+            "Kunnamkulam"
+          ]
+        },
+        {
+          "name": "Kunnamkulam",
+          "type": "town",
+          "villages": [
+            "Kunnamkulam Rural",
+            "Wadakkanchery",
+            "Pazhanji"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wayanad",
+      "cities": [
+        {
+          "name": "Kalpetta",
+          "type": "town",
+          "villages": [
+            "Kalpetta Rural",
+            "Mananthavady",
+            "Sultan Bathery"
+          ]
+        },
+        {
+          "name": "Mananthavady",
+          "type": "town",
+          "villages": [
+            "Mananthavady Rural",
+            "Thirunelli",
+            "Panamaram"
+          ]
+        },
+        {
+          "name": "Sultan Bathery",
+          "type": "town",
+          "villages": [
+            "Sultan Bathery Rural",
+            "Nenmeni",
+            "Pulpally"
+          ]
+        }
+      ]
+    }
+  ]
+}

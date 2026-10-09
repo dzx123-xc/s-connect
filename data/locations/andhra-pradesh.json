@@ -1,0 +1,426 @@
+{
+  "state": {
+    "code": "AP",
+    "name": "Andhra Pradesh"
+  },
+  "districts": [
+    {
+      "name": "Anantapur",
+      "cities": [
+        {
+          "name": "Anantapur",
+          "type": "city",
+          "villages": [
+            "Anantapur Rural",
+            "Bukkarayasamudram",
+            "Kudair",
+            "Gooty",
+            "Bethapalli"
+          ]
+        },
+        {
+          "name": "Hindupur",
+          "type": "city",
+          "villages": [
+            "Hindupur Rural",
+            "Lepakshi",
+            "Roddam"
+          ]
+        },
+        {
+          "name": "Kalyandurg",
+          "type": "town",
+          "villages": [
+            "Kalyandurg Rural",
+            "Kambadur",
+            "Kanaganapalle"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chittoor",
+      "cities": [
+        {
+          "name": "Chittoor",
+          "type": "city",
+          "villages": [
+            "Chittoor Rural",
+            "Gangavaram",
+            "Kalikiri"
+          ]
+        },
+        {
+          "name": "Tirupati",
+          "type": "city",
+          "villages": [
+            "Tirupati Rural",
+            "Chandragiri",
+            "Renigunta"
+          ]
+        },
+        {
+          "name": "Madanapalle",
+          "type": "town",
+          "villages": [
+            "Madanapalle Rural",
+            "Kurabalakota",
+            "Nimmanapalle"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "East Godavari",
+      "cities": [
+        {
+          "name": "Rajahmundry",
+          "type": "city",
+          "villages": [
+            "Rajahmundry Rural",
+            "Kadiam",
+            "Korukonda"
+          ]
+        },
+        {
+          "name": "Kakinada",
+          "type": "city",
+          "villages": [
+            "Kakinada Rural",
+            "Samalkot",
+            "Peddapuram"
+          ]
+        },
+        {
+          "name": "Amalapuram",
+          "type": "town",
+          "villages": [
+            "Amalapuram Rural",
+            "Mummidivaram",
+            "Razole"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Guntur",
+      "cities": [
+        {
+          "name": "Guntur",
+          "type": "city",
+          "villages": [
+            "Guntur Rural",
+            "Mangalagiri",
+            "Ponnur"
+          ]
+        },
+        {
+          "name": "Tenali",
+          "type": "city",
+          "villages": [
+            "Tenali Rural",
+            "Tsundur",
+            "Repalle"
+          ]
+        },
+        {
+          "name": "Narasaraopet",
+          "type": "town",
+          "villages": [
+            "Narasaraopet Rural",
+            "Vinukonda",
+            "Chilakaluripet"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kadapa",
+      "cities": [
+        {
+          "name": "Kadapa",
+          "type": "city",
+          "villages": [
+            "Kadapa Rural",
+            "Proddatur",
+            "Rayachoti"
+          ]
+        },
+        {
+          "name": "Proddatur",
+          "type": "city",
+          "villages": [
+            "Proddatur Rural",
+            "Jammalamadugu",
+            "Mydukur"
+          ]
+        },
+        {
+          "name": "Rayachoti",
+          "type": "town",
+          "villages": [
+            "Rayachoti Rural",
+            "Pulivendula",
+            "Rajampet"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krishna",
+      "cities": [
+        {
+          "name": "Vijayawada",
+          "type": "city",
+          "villages": [
+            "Vijayawada Rural",
+            "Gannavaram",
+            "Nandigama"
+          ]
+        },
+        {
+          "name": "Machilipatnam",
+          "type": "city",
+          "villages": [
+            "Machilipatnam Rural",
+            "Gudivada",
+            "Nuzvid"
+          ]
+        },
+        {
+          "name": "Nuzvid",
+          "type": "town",
+          "villages": [
+            "Nuzvid Rural",
+            "Vissannapet",
+            "Gampalagudem"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kurnool",
+      "cities": [
+        {
+          "name": "Kurnool",
+          "type": "city",
+          "villages": [
+            "Kurnool Rural",
+            "Nandyal",
+            "Adoni"
+          ]
+        },
+        {
+          "name": "Adoni",
+          "type": "city",
+          "villages": [
+            "Adoni Rural",
+            "Yemmiganur",
+            "Mantralayam"
+          ]
+        },
+        {
+          "name": "Nandyal",
+          "type": "city",
+          "villages": [
+            "Nandyal Rural",
+            "Atmakur",
+            "Banaganapalle"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nellore",
+      "cities": [
+        {
+          "name": "Nellore",
+          "type": "city",
+          "villages": [
+            "Nellore Rural",
+            "Kavali",
+            "Gudur"
+          ]
+        },
+        {
+          "name": "Kavali",
+          "type": "city",
+          "villages": [
+            "Kavali Rural",
+            "Allur",
+            "Atmakur"
+          ]
+        },
+        {
+          "name": "Gudur",
+          "type": "town",
+          "villages": [
+            "Gudur Rural",
+            "Venkatagiri",
+            "Sullurpet"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prakasam",
+      "cities": [
+        {
+          "name": "Ongole",
+          "type": "city",
+          "villages": [
+            "Ongole Rural",
+            "Chirala",
+            "Markapur"
+          ]
+        },
+        {
+          "name": "Chirala",
+          "type": "city",
+          "villages": [
+            "Chirala Rural",
+            "Vetapalem",
+            "Chirala Urban"
+          ]
+        },
+        {
+          "name": "Markapur",
+          "type": "town",
+          "villages": [
+            "Markapur Rural",
+            "Giddalur",
+            "Kanigiri"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Srikakulam",
+      "cities": [
+        {
+          "name": "Srikakulam",
+          "type": "city",
+          "villages": [
+            "Srikakulam Rural",
+            "Palasa",
+            "Rajam"
+          ]
+        },
+        {
+          "name": "Palasa",
+          "type": "town",
+          "villages": [
+            "Palasa Rural",
+            "Kasibugga",
+            "Tekkali"
+          ]
+        },
+        {
+          "name": "Rajam",
+          "type": "town",
+          "villages": [
+            "Rajam Rural",
+            "Regidi Amadalavalasa",
+            "Santhakaviti"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Visakhapatnam",
+      "cities": [
+        {
+          "name": "Visakhapatnam",
+          "type": "city",
+          "villages": [
+            "Visakhapatnam Rural",
+            "Anandapuram",
+            "Bheemunipatnam"
+          ]
+        },
+        {
+          "name": "Anakapalle",
+          "type": "city",
+          "villages": [
+            "Anakapalle Rural",
+            "Kasimkota",
+            "Narsipatnam"
+          ]
+        },
+        {
+          "name": "Narsipatnam",
+          "type": "town",
+          "villages": [
+            "Narsipatnam Rural",
+            "Golugonda",
+            "Rolugunta"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vizianagaram",
+      "cities": [
+        {
+          "name": "Vizianagaram",
+          "type": "city",
+          "villages": [
+            "Vizianagaram Rural",
+            "Parvathipuram",
+            "Bobbili"
+          ]
+        },
+        {
+          "name": "Parvathipuram",
+          "type": "town",
+          "villages": [
+            "Parvathipuram Rural",
+            "Salur",
+            "Makkuva"
+          ]
+        },
+        {
+          "name": "Bobbili",
+          "type": "town",
+          "villages": [
+            "Bobbili Rural",
+            "Therlam",
+            "Badangi"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "West Godavari",
+      "cities": [
+        {
+          "name": "Eluru",
+          "type": "city",
+          "villages": [
+            "Eluru Rural",
+            "Bhimavaram",
+            "Tadepalligudem"
+          ]
+        },
+        {
+          "name": "Bhimavaram",
+          "type": "city",
+          "villages": [
+            "Bhimavaram Rural",
+            "Palakollu",
+            "Narsapur"
+          ]
+        },
+        {
+          "name": "Tadepalligudem",
+          "type": "city",
+          "villages": [
+            "Tadepalligudem Rural",
+            "Unguturu",
+            "Tanuku"
+          ]
+        }
+      ]
+    }
+  ]
+}

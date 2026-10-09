@@ -1,0 +1,42 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
+from contextlib import contextmanager
+
+from app.config import settings
+
+engine = create_engine(
+    settings.database_url,
+    connect_args={"check_same_thread": False} if settings.database_url.startswith("sqlite") else {},
+    echo=settings.debug,
+    pool_pre_ping=True,
+)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+
+
+def init_db() -> None:
+    from app.models import user, session, sport, location
+    Base.metadata.create_all(bind=engine)
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+@contextmanager
+def db_session():
+    db = SessionLocal()
+    try:
+        yield db
+        db.commit()
+    except Exception:
+        db.rollback()
+        raise
+    finally:
+        db.close()

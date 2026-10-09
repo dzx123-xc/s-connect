@@ -1,0 +1,242 @@
+/* SConnect Animations - Transitions, effects, reduced motion support */
+@import url('./design-system.css');
+
+/* Fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-base) ease-in;
+}
+
+.fade-out {
+  animation: fadeOut var(--transition-base) ease-out;
+}
+
+/* Slide */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-4));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--space-4)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(var(--space-4));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-1 * var(--space-4)));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp var(--transition-base) ease-out;
+}
+
+.slide-down {
+  animation: slideDown var(--transition-base) ease-out;
+}
+
+.slide-left {
+  animation: slideLeft var(--transition-base) ease-out;
+}
+
+.slide-right {
+  animation: slideRight var(--transition-base) ease-out;
+}
+
+/* Hover transitions */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-glow {
+  transition: box-shadow var(--transition-base);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Subtle glow */
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-glow);
+  }
+  50% {
+    box-shadow: var(--shadow-glow-strong);
+  }
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-accent), rgba(0, 255, 136, 0.4));
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Modal transitions */
+.modal-fade-enter {
+  opacity: 0;
+}
+
+.modal-fade-enter-active {
+  opacity: 1;
+  transition: opacity var(--transition-base);
+}
+
+.modal-fade-exit {
+  opacity: 1;
+}
+
+.modal-fade-exit-active {
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.modal-slide-enter {
+  transform: scale(0.96) translateY(var(--space-4));
+  opacity: 0;
+}
+
+.modal-slide-enter-active {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.modal-slide-exit {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-slide-exit-active {
+  transform: scale(0.96) translateY(var(--space-4));
+  opacity: 0;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Loading animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  text-align: left;
+  animation: dots 1.4s infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .glow-pulse {
+    animation: none;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .loading-spinner {
+    animation-duration: 1.2s !important;
+  }
+}

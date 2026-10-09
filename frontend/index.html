@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SConnect - Sports Community Platform. Connect with players, coaches, clubs, and organizers.">
+    <title>SConnect - Sports Community Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header-inner">
+            <a href="/" class="logo" aria-label="SConnect Home">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 6c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z" fill="currentColor"/>
+                    <path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="#0a0a0a"/>
+                    <circle cx="16" cy="16" r="3" fill="#00ff88"/>
+                </svg>
+                <span class="logo-text">SConnect</span>
+            </a>
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="/discover.html" class="nav-link">Discover</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/discover.html" class="btn btn-ghost">Explore</a>
+                <a href="/player-dashboard.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge badge-accent">V1 Beta</span>
+                    </div>
+                    <h1 id="hero-title" class="hero-title">
+                        Connect. <span class="text-accent">Compete.</span> Grow.
+                    </h1>
+                    <p class="hero-subtitle">
+                        The sports community platform for players, coaches, clubs, organizers, and referees.
+                        Build your profile, find opportunities, and connect with your sports network.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="/player-dashboard.html" class="btn btn-primary btn-lg">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            Join as Player
+                        </a>
+                        <a href="/discover.html" class="btn btn-outline btn-lg">Explore Community</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-value" data-count="5000">0</span>
+                            <span class="stat-label">Athletes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-count="200">0</span>
+                            <span class="stat-label">Clubs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-count="50">0</span>
+                            <span class="stat-label">Sports</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-count="1200">0</span>
+                            <span class="stat-label">Events</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-globe">
+                        <svg viewBox="0 0 300 300" class="globe-svg">
+                            <defs>
+                                <radialGradient id="globeGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#00ff88" stop-opacity="0.3"/>
+                                    <stop offset="70%" stop-color="#00ff88" stop-opacity="0"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="150" cy="150" r="130" fill="url(#globeGlow)"/>
+                            <circle cx="150" cy="150" r="120" stroke="#00ff88" stroke-width="1" fill="none" opacity="0.3"/>
+                            <circle cx="150" cy="150" r="80" stroke="#00ff88" stroke-width="0.5" fill="none" opacity="0.2"/>
+                            <circle cx="150" cy="150" r="40" stroke="#00ff88" stroke-width="0.5" fill="none" opacity="0.1"/>
+                            <line x1="150" y1="20" x2="150" y2="280" stroke="#00ff88" stroke-width="0.5" opacity="0.2"/>
+                            <line x1="20" y1="150" x2="280" y2="150" stroke="#00ff88" stroke-width="0.5" opacity="0.2"/>
+                        </svg>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features" aria-labelledby="features-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="features-title" class="section-title">Built for Every Role</h2>
+                    <p class="section-subtitle">Role-specific dashboards with the tools you need</p>
+                </header>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Players</h3>
+                        <p class="feature-desc">Build your sports profile, showcase skills, apply for trials, join teams, and track your journey.</p>
+                        <a href="/player-dashboard.html" class="feature-link">Player Dashboard →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Coaches</h3>
+                        <p class="feature-desc">Manage your coaching portfolio, certifications, discover talent, and connect with clubs.</p>
+                        <a href="/coach-dashboard.html" class="feature-link">Coach Dashboard →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Clubs</h3>
+                        <p class="feature-desc">Manage club profile, roster, schedule matches, and organize trials for recruitment.</p>
+                        <a href="/club-dashboard.html" class="feature-link">Club Dashboard →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Organizers</h3>
+                        <p class="feature-desc">Create tournaments, manage registrations, schedule matches, and oversee events.</p>
+                        <a href="/organizer-dashboard.html" class="feature-link">Organizer Dashboard →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Referees</h3>
+                        <p class="feature-desc">Manage officiating assignments, certifications, match records, and availability.</p>
+                        <a href="/referee-dashboard.html" class="feature-link">Referee Dashboard →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Admins</h3>
+                        <p class="feature-desc">Platform moderation, user management, content oversight, and analytics.</p>
+                        <a href="/admin-portal.html" class="feature-link">Admin Portal →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 id="about-title" class="section-title">Why SConnect?</h2>
+                        <p class="about-desc">
+                            Sports communities are fragmented. Players struggle to find trials, coaches can't discover talent,
+                            clubs lack recruitment tools, and organizers juggle disconnected systems.
+                        </p>
+                        <p class="about-desc">
+                            SConnect unifies the sports ecosystem with role-specific dashboards, secure authentication,
+                            and a discovery engine built for Indian sports — starting with Andhra Pradesh and Kerala.
+                        </p>
+                        <ul class="about-list">
+                            <li><strong>Secure by default:</strong> Server-side sessions, Argon2id password hashing, role-based authorization</li>
+                            <li><strong>Privacy first:</strong> No tracking, no third-party analytics, your data stays yours</li>
+                            <li><strong>Location-aware:</strong> State → District → City → Village cascade for precise discovery</li>
+                            <li><strong>Open foundation:</strong> FastAPI + SQLite locally, PostgreSQL in production</li>
+                        </ul>
+                    </div>
+                    <div class="about-visual" aria-hidden="true">
+                        <div class="code-preview">
+                            <div class="code-header">
+                                <span class="code-dot dot-red"></span>
+                                <span class="code-dot dot-yellow"></span>
+                                <span class="code-dot dot-green"></span>
+                            </div>
+                            <pre class="code-body"><code><span class="kw">from</span> <span class="mod">fastapi</span> <span class="kw">import</span> FastAPI
+<span class="kw">from</span> <span class="mod">sqlalchemy</span> <span class="kw">import</span> select
+<span class="kw">from</span> <span class="mod">argon2</span> <span class="kw">import</span> PasswordHasher
+
+<span class="fn">app</span> = FastAPI()
+<span class="fn">ph</span> = PasswordHasher()
+
+<span class="kw">async def</span> <span class="fn">create_user</span>(email, password, role):
+    hash = <span class="fn">ph</span>.hash(password)
+    <span class="kw">await</span> db.execute(
+        <span class="kw">insert</span>(User).values(
+            email=email, password_hash=hash, role=role
+        )
+    )
+    <span class="kw">return</span> user</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Ready to Join?</h2>
+                    <p class="cta-desc">Create your profile in minutes. Start connecting with your sports community today.</p>
+                    <a href="/player-dashboard.html" class="btn btn-primary btn-lg">Get Started Free</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo" aria-label="SConnect Home">
+                        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 6c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z" fill="currentColor"/>
+                            <path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="#0a0a0a"/>
+                            <circle cx="16" cy="16" r="3" fill="#00ff88"/>
+                        </svg>
+                        <span class="logo-text">SConnect</span>
+                    </a>
+                    <p class="footer-tagline">Sports Community Platform</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <div class="footer-nav-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="/discover.html">Discover</a></li>
+                            <li><a href="/player-dashboard.html">Player Dashboard</a></li>
+                            <li><a href="/coach-dashboard.html">Coach Dashboard</a></li>
+                            <li><a href="/club-dashboard.html">Club Dashboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">API Reference</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 SConnect. Built with FastAPI + Vanilla JS.</p>
+                <p class="version">v1.0.0-beta</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/api.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module">
+        import { checkAuth } from '/js/auth.js';
+        checkAuth();
+    </script>
+</body>
+</html>
