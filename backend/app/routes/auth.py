@@ -66,12 +66,12 @@ def login(data: LoginRequest, response: Response, db: DBSession = Depends(get_db
     session_id = create_session(db, user.id)
 
     response.set_cookie(
-        key="session_id",
+        key=settings.session_cookie_name,
         value=session_id,
-        httponly=True,
-        secure=False,
-        samesite="lax",
-        max_age=30 * 24 * 60 * 60,
+        httponly=settings.session_cookie_httponly,
+        secure=settings.session_cookie_secure,
+        samesite=settings.session_cookie_samesite,
+        max_age=settings.session_max_age_seconds,
         path="/",
     )
 
