@@ -5,6 +5,7 @@ from fastapi import Request, HTTPException, status
 from starlette.middleware.base import BaseHTTPMiddleware
 
 from app.database import SessionLocal
+from app.config import settings
 from app.models.session import Session
 from app.models.user import User
 from app.auth.password import hash_session_id, is_session_expired, is_session_revoked
@@ -15,7 +16,7 @@ class SessionMiddleware(BaseHTTPMiddleware):
         request.state.user = None
         request.state.session = None
 
-        session_id = request.cookies.get("session_id")
+        session_id = request.cookies.get(settings.session_cookie_name)
         if not session_id:
             response = await call_next(request)
             return response
