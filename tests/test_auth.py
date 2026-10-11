@@ -104,12 +104,12 @@ class TestAuthServiceIntegration:
     def test_user_registration_creates_password_hash(self, auth_service, test_db):
         user = auth_service.register_user(
             email="test@example.com",
-            password="secure_password_123",
+            password="SecurePass1!",
             role="player",
         )
         assert user.id is not None
         assert user.email == "test@example.com"
-        assert user.password_hash != "secure_password_123"
+        assert user.password_hash != "SecurePass1!"
         assert user.password_hash.startswith("$argon2id$")
         assert user.is_active is True
         assert user.role == "player"
@@ -117,33 +117,33 @@ class TestAuthServiceIntegration:
     def test_user_registration_duplicate_email_fails(self, auth_service, test_db):
         auth_service.register_user(
             email="duplicate@example.com",
-            password="password123",
+            password="SecurePass1!",
             role="player",
         )
         with pytest.raises(Exception):
             auth_service.register_user(
                 email="duplicate@example.com",
-                password="password456",
+                password="SecurePass2!",
                 role="coach",
             )
 
     def test_password_verification_through_service(self, auth_service, test_db):
         auth_service.register_user(
             email="verify@example.com",
-            password="correct_password",
+            password="CorrectPass1!",
             role="player",
         )
-        user = auth_service.verify_password("verify@example.com", "correct_password")
+        user = auth_service.verify_password("verify@example.com", "CorrectPass1!")
         assert user is not None
         assert user.email == "verify@example.com"
 
-        user = auth_service.verify_password("verify@example.com", "wrong_password")
+        user = auth_service.verify_password("verify@example.com", "WrongPass1!")
         assert user is None
 
     def test_session_creation_returns_session_id(self, auth_service, test_db):
         user = auth_service.register_user(
             email="session@example.com",
-            password="password123",
+            password="SecurePass1!",
             role="player",
         )
         session_id = auth_service.create_session(user.id)
@@ -153,7 +153,7 @@ class TestAuthServiceIntegration:
     def test_session_lookup_by_id(self, auth_service, test_db):
         user = auth_service.register_user(
             email="lookup@example.com",
-            password="password123",
+            password="SecurePass1!",
             role="player",
         )
         session_id = auth_service.create_session(user.id)
@@ -168,7 +168,7 @@ class TestAuthServiceIntegration:
     def test_session_revocation(self, auth_service, test_db):
         user = auth_service.register_user(
             email="revoke@example.com",
-            password="password123",
+            password="SecurePass1!",
             role="player",
         )
         session_id = auth_service.create_session(user.id)
@@ -187,7 +187,7 @@ class TestAuthServiceIntegration:
     def test_multiple_sessions_per_user(self, auth_service, test_db):
         user = auth_service.register_user(
             email="multi@example.com",
-            password="password123",
+            password="SecurePass1!",
             role="player",
         )
         session1 = auth_service.create_session(user.id)
@@ -205,7 +205,7 @@ class TestAuthServiceIntegration:
     def test_revoke_all_user_sessions(self, auth_service, test_db):
         user = auth_service.register_user(
             email="revokeall@example.com",
-            password="password123",
+            password="SecurePass1!",
             role="player",
         )
         session1 = auth_service.create_session(user.id)

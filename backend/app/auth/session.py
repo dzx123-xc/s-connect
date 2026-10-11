@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional
 
 from fastapi import Request, HTTPException, status
@@ -57,6 +57,3 @@ def get_current_user(request: Request) -> User:
 
 def get_current_user_optional(request: Request) -> Optional[User]:
     return getattr(request.state, "user", None)
-
-
-from datetime import timedelta

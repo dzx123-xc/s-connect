@@ -14,7 +14,8 @@ import { api, ApiError } from './api.js';
 export async function checkAuth(requiredRole = null) {
   try {
     const response = await api.get('/auth/me');
-    const user = response.data?.user || response.data;
+    const payload = response.data || {};
+    const user = payload.user || payload;
 
     if (!user) {
       return { authenticated: false };
@@ -56,7 +57,7 @@ export async function logout() {
  * Redirect to login page
  */
 export function redirectToLogin() {
-  window.location.href = '/login';
+  window.location.href = '/index.html';
 }
 
 /**
@@ -64,19 +65,17 @@ export function redirectToLogin() {
  * @param {string} [role] - User role
  */
 export function redirectToDashboard(role = null) {
-  if (role === 'admin') {
-    window.location.href = '/admin';
-  } else if (role === 'coach') {
-    window.location.href = '/coach';
-  } else if (role === 'player') {
-    window.location.href = '/player';
-  } else if (role === 'scout') {
-    window.location.href = '/scout';
-  } else if (role === 'parent') {
-    window.location.href = '/parent';
-  } else {
-    window.location.href = '/dashboard';
-  }
+  const routes = {
+    player: '/player-dashboard.html',
+    coach: '/coach-dashboard.html',
+    club: '/club-dashboard.html',
+    organizer: '/organizer-dashboard.html',
+    referee: '/referee-dashboard.html',
+    admin: '/admin-portal.html',
+  };
+
+  const target = routes[role] || '/index.html';
+  window.location.href = target;
 }
 
 export default {

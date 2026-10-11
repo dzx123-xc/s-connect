@@ -6,11 +6,11 @@ from fastapi.responses import FileResponse
 import os
 
 from app.config import settings
-from app.database import init_db
-from app.routes import auth_router, health_router
+from app.database import init_db, SessionLocal
+from app.routes import auth_router, health_router, admin_router
 from app.auth.session import SessionMiddleware
 from app.services.location_service import seed_locations
-from app.database import SessionLocal
+from app.services.admin_service import bootstrap_admin_from_env
 
 
 @asynccontextmanager
@@ -19,6 +19,7 @@ async def lifespan(app: FastAPI):
     db = SessionLocal()
     try:
         seed_locations(db)
+        bootstrap_admin_from_env(db)
     finally:
         db.close()
     yield
@@ -43,6 +44,7 @@ app.add_middleware(SessionMiddleware)
 
 app.include_router(health_router)
 app.include_router(auth_router)
+app.include_router(admin_router)
 
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "..", "frontend")
 frontend_dir = os.path.abspath(frontend_dir)

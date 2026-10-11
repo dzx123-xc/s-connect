@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, ConfigDict
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 
@@ -24,8 +24,7 @@ class PlayerProfileResponse(PlayerProfileBase):
     user_id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class CoachProfileBase(BaseModel):
@@ -47,8 +46,7 @@ class CoachProfileResponse(CoachProfileBase):
     user_id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ClubProfileBase(BaseModel):
@@ -71,8 +69,7 @@ class ClubProfileResponse(ClubProfileBase):
     user_id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class OrganizerProfileBase(BaseModel):
@@ -93,8 +90,7 @@ class OrganizerProfileResponse(OrganizerProfileBase):
     user_id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class RefereeProfileBase(BaseModel):
@@ -115,31 +111,54 @@ class RefereeProfileResponse(RefereeProfileBase):
     matches_officiated: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
+    username: str
+    phone: str
+    full_name: str
+    role: str
+    is_active: bool
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ProfileResponse(BaseModel):
-    user: "UserResponse"
+    user: UserResponse
     player: Optional[PlayerProfileResponse] = None
     coach: Optional[CoachProfileResponse] = None
     club: Optional[ClubProfileResponse] = None
     organizer: Optional[OrganizerProfileResponse] = None
     referee: Optional[RefereeProfileResponse] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
-class UserResponse(BaseModel):
-    id: int
-    email: str
-    role: str
-    is_active: bool
-    created_at: datetime
-
-    class Config:
-        from_attributes = True
-
-
-ProfileResponse.model_rebuild()
+__all__ = [
+    "UserResponse",
+    "ProfileResponse",
+    "PlayerProfileBase",
+    "PlayerProfileCreate",
+    "PlayerProfileUpdate",
+    "PlayerProfileResponse",
+    "CoachProfileBase",
+    "CoachProfileCreate",
+    "CoachProfileUpdate",
+    "CoachProfileResponse",
+    "ClubProfileBase",
+    "ClubProfileCreate",
+    "ClubProfileUpdate",
+    "ClubProfileResponse",
+    "OrganizerProfileBase",
+    "OrganizerProfileCreate",
+    "OrganizerProfileUpdate",
+    "OrganizerProfileResponse",
+    "RefereeProfileBase",
+    "RefereeProfileCreate",
+    "RefereeProfileUpdate",
+    "RefereeProfileResponse",
+]

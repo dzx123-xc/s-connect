@@ -12,14 +12,47 @@ from app.auth.password import (
     hash_session_id,
     create_session_expiry,
 )
-from app.schemas.auth import RegisterRequest
+from app.schemas.auth import RegisterRequest, PUBLIC_ROLES
+
+
+# Role -> required fields that must be non-empty for a valid registration.
+ROLE_REQUIRED_FIELDS = {
+    "player": [],
+    "coach": [],
+    "club": ["name"],
+    "organizer": ["organization_name"],
+    "referee": [],
+}
+
+
+def _validate_role_required_fields(data: RegisterRequest) -> None:
+    required = ROLE_REQUIRED_FIELDS.get(data.role, [])
+    missing: List[str] = []
+    for field_name in required:
+        value = getattr(data, field_name, None)
+        if value is None or (isinstance(value, str) and not value.strip()):
+            missing.append(field_name)
+    if missing:
+        raise ValueError(
+            f"Role '{data.role}' requires the following fields: {', '.join(missing)}"
+        )
 
 
 def create_user_with_profile(db: DBSession, data: RegisterRequest) -> User:
+    _validate_role_required_fields(data)
+
     user = User(
         email=data.email.lower(),
+        username=data.username.lower(),
+        phone=data.phone,
+        full_name=data.full_name,
         password_hash=hash_password(data.password),
         role=data.role,
+        availability=data.availability,
+        state=data.state,
+        district=data.district,
+        city=data.city,
+        village=data.village,
         is_active=True,
     )
     db.add(user)
@@ -134,12 +167,29 @@ def get_user_by_email(db: DBSession, email: str) -> Optional[User]:
     return db.query(User).filter(User.email == email.lower()).first()
 
 
+def get_user_by_username(db: DBSession, username: str) -> Optional[User]:
+    return db.query(User).filter(User.username == username.lower()).first()
+
+
+def get_user_by_phone(db: DBSession, phone: str) -> Optional[User]:
+    return db.query(User).filter(User.phone == phone).first()
+
+
 def get_user_by_id(db: DBSession, user_id: int) -> Optional[User]:
     return db.query(User).filter(User.id == user_id).first()
 
 
-def verify_user_password(db: DBSession, email: str, password: str) -> Optional[User]:
-    user = get_user_by_email(db, email)
+def verify_user_password(db: DBSession, identifier: str, password: str) -> Optional[User]:
+    identifier = identifier.strip()
+    user = None
+
+    if "@" in identifier:
+        user = get_user_by_email(db, identifier)
+    if not user:
+        user = get_user_by_username(db, identifier)
+    if not user:
+        user = get_user_by_phone(db, identifier)
+
     if not user:
         return None
     if not verify_password(user.password_hash, password):
@@ -148,4 +198,36 @@ def verify_user_password(db: DBSession, email: str, password: str) -> Optional[U
 
 
 def get_user_with_profile(db: DBSession, user_id: int) -> Optional[User]:
-    return db.query(User).filter(User.id == user_id).first()
+    return (
+        db.query(User)
+        .filter(User.id == user_id)
+        .first()
+    )
+
+
+def get_public_profile(user: User) -> Optional[object]:
+    """Return the active role profile object for a user, or None."""
+    return {
+        "player": user.player_profile,
+        "coach": user.coach_profile,
+        "club": user.club_profile,
+        "organizer": user.organizer_profile,
+        "referee": user.referee_profile,
+    }.get(user.role)
+
+
+__all__ = [
+    "create_user_with_profile",
+    "create_session",
+    "get_session",
+    "validate_session",
+    "revoke_session",
+    "revoke_all_user_sessions",
+    "get_user_by_email",
+    "get_user_by_username",
+    "get_user_by_phone",
+    "get_user_by_id",
+    "verify_user_password",
+    "get_user_with_profile",
+    "get_public_profile",
+]
